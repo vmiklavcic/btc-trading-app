@@ -1,0 +1,1 @@
+export const INITIAL_EUR_BALANCE = 10000;

@@ -1,4 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { INITIAL_EUR_BALANCE } from "./constants";
 import type { BuyParams, SellParams } from "./types";
 
 interface BalanceState {
@@ -7,7 +8,7 @@ interface BalanceState {
 }
 
 const initialState: BalanceState = {
-  eur: 10000,
+  eur: INITIAL_EUR_BALANCE,
   btc: 0,
 };
 
