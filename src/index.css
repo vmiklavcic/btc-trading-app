@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --color-dark: #202020;
+  --color-profit: #00bf13;
+  --color-chart-area: #3fbebe;
+  --color-chart-line: #287979;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
+}
+
+.recharts-wrapper *:focus {
+  outline: none !important;
 }
