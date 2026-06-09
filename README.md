@@ -27,3 +27,11 @@ npm run dev
 ```
 
 The app will be available at `http://localhost:5173`
+
+## Testing
+
+To run Jest tests use
+
+```bash
+npm test
+```
