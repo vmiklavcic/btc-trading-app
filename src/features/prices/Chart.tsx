@@ -1,7 +1,7 @@
 import { Area, AreaChart, ResponsiveContainer, Tooltip, YAxis } from "recharts";
 import Loading from "../../components/Loading";
-import { useMarketChart } from "../../hooks/useMarketChart";
 import { formatEur } from "../../utils/priceFormatters";
+import { useMarketChart } from "./hooks/useMarketChart";
 
 const Chart = () => {
   const { data, isLoading, isError } = useMarketChart();

@@ -1,9 +1,9 @@
-import type { ChartData } from "../types/chart.types";
 import {
   BTC_API_CONFIG,
   COINGECKO_API_KEY,
   COINGECKO_BASE_URL,
-} from "./constants";
+} from "../../../api/constants";
+import type { ChartData } from "../types/chart.types";
 
 const fetchMarketChart = async (): Promise<ChartData> => {
   const params = new URLSearchParams({

@@ -5,8 +5,8 @@ import Loading from "../../components/Loading";
 import { useLatestMarketPrice } from "../../hooks/useLatestMarketPrice";
 import { buy, sell } from "../../store/balanceSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import type { TransactionType } from "../../types/transaction.types";
 import { DEBOUNCE_MS } from "./constants/constants";
+import type { TransactionType } from "./types/transaction.types";
 import { btcToEur, eurToBtc } from "./utils/priceConverters";
 
 interface TradeFormProps {

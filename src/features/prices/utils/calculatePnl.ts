@@ -1,4 +1,4 @@
-import { INITIAL_EUR_BALANCE } from "../store/constants";
+import { INITIAL_EUR_BALANCE } from "../../../store/constants";
 
 export const calculatePnl = (
   fiat: number,

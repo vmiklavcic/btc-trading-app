@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { Transaction } from "../types/transaction.types";
+import type { Transaction } from "../features/trading/types/transaction.types";
 import { buy, sell } from "./balanceSlice";
 
 interface TransactionsState {

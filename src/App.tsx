@@ -1,6 +1,6 @@
 import Header from "./components/Header";
-import Chart from "./features/chart/Chart";
-import PriceSummary from "./features/price-summary/PriceSummary";
+import Chart from "./features/prices/Chart";
+import PortfolioSummary from "./features/prices/PortfolioSummary";
 import Trading from "./features/trading/Trading";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <Header />
       <div className="flex flex-col mx-auto max-w-5xl px-4 gap-4">
-        <PriceSummary />
+        <PortfolioSummary />
         <Chart />
         <Trading />
       </div>
