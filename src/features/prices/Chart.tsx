@@ -1,7 +1,16 @@
-import { Area, AreaChart, ResponsiveContainer, Tooltip, YAxis } from "recharts";
+import {
+  Area,
+  AreaChart,
+  ReferenceLine,
+  ResponsiveContainer,
+  Tooltip,
+  YAxis,
+} from "recharts";
 import Loading from "../../components/Loading";
 import { formatEur } from "../../utils/priceFormatters";
+import PrevCloseTick from "./components/PrevCloseTick";
 import { useMarketChart } from "./hooks/useMarketChart";
+import { getChartTicks } from "./utils/getYAxisTicks";
 
 const Chart = () => {
   const { data, isLoading, isError } = useMarketChart();
@@ -10,6 +19,11 @@ const Chart = () => {
     time: timeStamp,
     price: price,
   }));
+  const prevClose = formattedChartData?.[0]?.price;
+  const ticks =
+    formattedChartData && prevClose
+      ? getChartTicks(formattedChartData, prevClose)
+      : undefined;
 
   return (
     <div className="relative w-full">
@@ -44,6 +58,7 @@ const Chart = () => {
           <YAxis
             domain={["auto", "auto"]}
             orientation="right"
+            ticks={ticks}
             tick={{ fill: "var(--color-chart-line)", fontSize: 12 }}
             tickFormatter={(value) => formatEur(value as number)}
             axisLine={false}
@@ -65,6 +80,12 @@ const Chart = () => {
               borderRadius: "6px",
             }}
             formatter={(value) => [formatEur(value as number) + " €"]}
+          />
+          <ReferenceLine
+            y={prevClose}
+            stroke="var(--color-chart-area)"
+            strokeDasharray="1 4"
+            label={<PrevCloseTick prevClose={prevClose ?? 0} />}
           />
         </AreaChart>
       </ResponsiveContainer>
